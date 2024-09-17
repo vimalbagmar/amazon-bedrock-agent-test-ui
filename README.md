@@ -33,8 +33,11 @@ pip3 install streamlit --user
 
 ## 2. Download and Install ngrok
 wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
+
 tar -xvzf ngrok-v3-stable-linux-amd64.tgz
+
 chmod +x ngrok
+
 sudo mv ngrok /usr/local/bin/
 
 ## 3. Create a Simple Streamlit App
