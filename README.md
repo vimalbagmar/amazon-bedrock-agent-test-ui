@@ -27,3 +27,26 @@ A generic Streamlit UI for testing generative AI agents built using Agents for A
    ```
    streamlit run app.py --server.port=8080 --server.address=localhost
    ```
+# Using in CloudShell
+## 1. Install Streamlit
+pip3 install streamlit --user
+
+## 2. Download and Install ngrok
+wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
+tar -xvzf ngrok-v3-stable-linux-amd64.tgz
+chmod +x ngrok
+sudo mv ngrok /usr/local/bin/
+
+## 3. Create a Simple Streamlit App
+echo "
+import streamlit as st
+
+st.title('Hello from AWS CloudShell!')
+st.write('This is a simple Streamlit app running in CloudShell with ngrok.')
+" > app.py
+
+## 4. Run Streamlit App
+streamlit run app.py --server.port=8080 --server.address=0.0.0.0 &
+
+## 5. Run ngrok to Expose the Streamlit App
+ngrok http 8080
